@@ -1,0 +1,86 @@
+/* Global CSS Variables for consistent theming */
+:root {
+  --teal: #2e5143;
+  --light-teal: #587469;
+  --universal-tan: #e3a572;
+  --universal-tan-02: #f0e7d8;
+  --light-grey: #f5f5f5;
+  --white: #ffffff;
+  --dark-text: #333333;
+  --medium-grey: #666666;
+  --medium-grey-text: #666666; /* Ensuring consistency */
+}
+
+/* Global Body Styles */
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
+
+/* Font Families - Centralized here for consistency */
+/* Inter font for general body and header/footer elements */
+body,
+/* .site-footer, */
+.site-footer__logo-container,
+.ns-header,
+.navbar-nav .nav-link,
+.home-hero__menu-item > span, /* This is the menu heading */
+.home-menu-section,
+.filter-button,
+.search-input,
+.property-card-type,
+.property-card-living,
+.property-card-address,
+.detail-item,
+.browse-more-btn,
+.popular-tag {
+  font-family: "Inter", Arial, sans-serif;
+}
+
+/* Nunito Sans font for contact, newsletter, and menu option sections */
+.site-footer,
+.home-contact-section,
+.home-newsletter-section,
+.newsletter-input,
+.home-hero__interactive-select,
+.form-select,
+.home-hero__filter-label,
+.home-hero__filter-button,
+.home-hero__location-input,
+.home-hero__view-properties-button {
+  font-family: "Nunito Sans", sans-serif;
+}
+
+/* Ensure icon fonts are not overridden */
+/* Explicitly set font-family for Font Awesome and Bootstrap Icons */
+.bi {
+  /* For Bootstrap Icons */
+  font-family: "bootstrap-icons" !important;
+}
+
+.fas,
+.far,
+.fal,
+.fad {
+  /* For Font Awesome Solid, Regular, Light, Duotone */
+  font-family: "Font Awesome 6 Free" !important;
+  font-weight: 900; /* Solid icons typically need font-weight 900 */
+}
+.fab {
+  /* For Font Awesome Brands */
+  font-family: "Font Awesome 6 Brands" !important;
+  font-weight: 400;
+}
+/* Specific icon classes that might need font-family override if they are direct children of elements with general font-family */
+.ns-header__language-icon,
+.ns-header__account-option i,
+.filter-icon,
+.home-hero__search-icon,
+.home-hero__location-search-icon,
+.search-input-icon,
+.popular-tag i,
+.heart-icon,
+.detail-item i {
+  /* These classes will now inherit from .bi or .fas/.fab if they have those classes */
+  /* No need to explicitly set font-family here if .bi or .fas/.fab are applied directly */
+}

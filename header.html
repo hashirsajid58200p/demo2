@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nestoraa Navbar Component</title>
+    <!-- Bootstrap Icons CSS link -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Link to global root styles first -->
+    <link rel="stylesheet" href="./style/rootStyle.css" />
+    <!-- Then link to component-specific styles -->
+    <link rel="stylesheet" href="./style/headerStyle.css" />
+  </head>
+  <body>
+    <header class="ns-header">
+      <nav class="navbar navbar-expand-lg bg-white">
+        <div class="container-fluid px-3 px-md-5">
+          <!-- Logo -->
+          <a class="navbar-brand" href="#">
+            <img
+              src="./src/Nestoraa_Logo Files/Nestoraa_Files/WEBP/Nestoraa Green.webp"
+              class="ns-header__logo"
+              alt="Nestoraa Logo"
+            />
+          </a>
+
+          <!-- Mobile Icons (Language + Toggler) -->
+          <div class="d-flex align-items-center d-lg-none">
+            <i class="bi bi-globe ns-header__language-icon me-3"></i>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNav"
+              aria-controls="navbarNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          </div>
+
+          <!-- Collapsible Menu -->
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <!-- Main Nav Links (Aligned Right on Desktop) -->
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Services</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Blog</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">List your property</a>
+              </li>
+            </ul>
+
+            <!-- Desktop Actions (Language + Account) -->
+            <div class="d-none d-lg-flex align-items-center">
+              <i class="bi bi-globe ns-header__language-icon"></i>
+              <div class="ns-header__account-option ms-4">
+                <i class="bi bi-list ns-header__hamburger-icon"></i>
+                <i class="bi bi-person ns-header__profile-icon"></i>
+              </div>
+            </div>
+
+            <!-- Mobile Account Button (Inside Hamburger) -->
+            <div class="d-lg-none ns-header__actions-mobile">
+              <div class="ns-header__account-option">
+                <i class="bi bi-person ns-header__profile-icon"></i>
+                <span class="ms-2">Account</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nestoraa</title>
+    <link
+      rel="shortcut icon"
+      href="./src/Nestoraa_Logo Files/N_Files/SVG/White.svg"
+      type="image/x-icon"
+    />
+    <!-- Added Font Awesome 6.4.0 CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      xintegrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Bootstrap Icons CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Inter font for general body and header/footer elements -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Nunito Sans font for contact and newsletter sections -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Link to global root styles first -->
+    <link rel="stylesheet" href="./style/rootStyle.css" />
+
+    <!-- Then link to component-specific styles -->
+    <link rel="stylesheet" href="./style/headerStyle.css" />
+    <link rel="stylesheet" href="./style/homePageStyle.css" />
+    <link rel="stylesheet" href="./style/footerStyle.css" />
+    <link rel="stylesheet" href="./style/adPlacementStyle.css" />
+  </head>
+  <body>
+    <!-- Placeholder for Header - Content will be loaded here by JavaScript -->
+    <div id="header-placeholder"></div>
+
+    <!-- Homepage Landing Section (Hero) -->
+    <section class="home-hero__section">
+      <div class="home-hero__background-image-container">
+        <div class="home-hero__background-image">
+          <img src="./src//Nestoraa_Imagery/27.png" alt="Background Image" />
+        </div>
+        <div class="home-hero__overlay-text">
+          <h1>Your Nestoraa,<br />Your Choice, Your Control.</h1>
+          <p>Where the right home meets the right support.</p>
+        </div>
+      </div>
+
+      <!-- Menu bar now contains the filter dropdowns -->
+      <div class="home-hero__menu-bar" id="heroMenuBar">
+        <!-- Top part of the menu bar with main items -->
+        <div
+          class="home-hero__menu-bar-top d-flex flex-wrap justify-content-around align-items-center"
+        >
+          <!-- Find a Property -->
+          <div
+            class="home-hero__menu-item col-12 col-md-6 col-lg-auto mb-3 mb-lg-0"
+          >
+            <span>Find a Property</span>
+            <div
+              class="home-hero__interactive-select"
+              data-target-dropdown="propertyFilterDropdown"
+            >
+              <span class="selected-value" id="propertySelectedValue"
+                >Select Your Living</span
+              >
+              <i class="bi bi-chevron-down"></i>
+            </div>
+          </div>
+
+          <div class="home-hero__separator d-none d-lg-block"></div>
+
+          <!-- Find a Housemate -->
+          <div
+            class="home-hero__menu-item col-12 col-md-6 col-lg-auto mb-3 mb-lg-0"
+          >
+            <span>Find a Housemate</span>
+            <div
+              class="home-hero__interactive-select"
+              data-target-dropdown="housemateFilterDropdown"
+            >
+              <span class="selected-value" id="housemateSelectedValue"
+                >Pick Your Ideal Person</span
+              >
+              <i class="bi bi-chevron-down"></i>
+            </div>
+          </div>
+
+          <div class="home-hero__separator d-none d-lg-block"></div>
+
+          <!-- Find Services -->
+          <div
+            class="home-hero__menu-item col-12 col-md-6 col-lg-auto mb-3 mb-lg-0"
+          >
+            <span>Find Services</span>
+            <div
+              class="home-hero__interactive-select"
+              data-target-dropdown="servicesFilterDropdown"
+            >
+              <span class="selected-value" id="servicesSelectedValue"
+                >Select Your Needs</span
+              >
+              <i class="bi bi-chevron-down"></i>
+            </div>
+          </div>
+
+          <div class="home-hero__separator d-none d-lg-block"></div>
+
+          <!-- Find a Specialist -->
+          <div
+            class="home-hero__menu-item col-12 col-md-6 col-lg-auto mb-3 mb-lg-0"
+          >
+            <span>Find a Specialist</span>
+            <div
+              class="home-hero__interactive-select"
+              data-target-dropdown="specialistFilterDropdown"
+            >
+              <span class="selected-value" id="specialistSelectedValue"
+                >Suited to You</span
+              >
+              <i class="bi bi-chevron-down"></i>
+            </div>
+          </div>
+
+          <!-- Search Button -->
+          <div class="home-hero__search-button col-12 col-lg-auto mt-3 mt-lg-0">
+            <i class="bi bi-search home-hero__search-icon"></i>
+          </div>
+        </div>
+
+        <!-- Container for all the expandable filter content -->
+        <div class="home-hero__dropdown-content-container">
+          <!-- Property Filter Dropdown Content -->
+          <div
+            class="home-hero__property-filter-dropdown"
+            id="propertyFilterDropdown"
+          >
+            <div class="home-hero__filter-section">
+              <div class="home-hero__filter-step">A</div>
+              <div class="home-hero__filter-main-content">
+                <span class="home-hero__filter-label">Select Your Living</span>
+                <div class="home-hero__options-container">
+                  <div class="home-hero__options-grid">
+                    <button class="home-hero__filter-button" data-filter-group="living" data-value="SIL">SIL</button>
+                    <button class="home-hero__filter-button" data-filter-group="living" data-value="SDA">SDA</button>
+                    <button class="home-hero__filter-button" data-filter-group="living" data-value="Respite">Respite</button>
+                    <button class="home-hero__filter-button" data-filter-group="living" data-value="STA">STA</button>
+                    <button class="home-hero__filter-button" data-filter-group="living" data-value="MTA">MTA</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="home-hero__filter-section">
+              <div class="home-hero__filter-step">B</div>
+              <div class="home-hero__filter-main-content">
+                <span class="home-hero__filter-label">For</span>
+                <div class="home-hero__options-container">
+                  <div class="home-hero__options-grid">
+                    <button class="home-hero__filter-button" data-filter-group="for" data-value="Myself">Myself</button>
+                    <button class="home-hero__filter-button" data-filter-group="for" data-value="Client">Client</button>
+                    <button class="home-hero__filter-button" data-filter-group="for" data-value="Family Member">Family Member</button>
+                    <button class="home-hero__filter-button" data-filter-group="for" data-value="Friend">Friend</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="home-hero__filter-section">
+              <div class="home-hero__filter-step">C</div>
+              <div class="home-hero__filter-main-content">
+                <span class="home-hero__filter-label">Choose your location</span>
+                <div class="home-hero__options-container">
+                  <div class="home-hero__location-input-group">
+                    <input type="text" class="home-hero__location-input" placeholder="Select location"/>
+                    <i class="bi bi-search home-hero__location-search-icon"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="home-hero__filter-section">
+              <div class="home-hero__filter-step">D</div>
+              <div class="home-hero__filter-main-content">
+                <span class="home-hero__filter-label">Support type</span>
+                <div class="home-hero__options-container">
+                  <div class="home-hero__options-grid">
+                    <button class="home-hero__filter-button" data-filter-group="support-type" data-value="24/7">24/7</button>
+                    <button class="home-hero__filter-button" data-filter-group="support-type" data-value="Day">Day</button>
+                    <button class="home-hero__filter-button" data-filter-group="support-type" data-value="Eve">Eve</button>
+                    <button class="home-hero__filter-button" data-filter-group="support-type" data-value="Night">Night</button>
+                    <button class="home-hero__filter-button" data-filter-group="support-type" data-value="Bring my own">Bring my own</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="home-hero__filter-section">
+              <div class="home-hero__filter-step">E</div>
+              <div class="home-hero__filter-main-content">
+                <span class="home-hero__filter-label">House specifications</span>
+                <div class="home-hero__options-container">
+                  <div class="home-hero__options-grid">
+                    <button class="home-hero__filter-button" data-filter-group="house-spec" data-value="Full House" data-multi-select="true">Full House</button>
+                    <button class="home-hero__filter-button" data-filter-group="house-spec" data-value="Sharing" data-multi-select="true">Sharing</button>
+                    <button class="home-hero__filter-button" data-filter-group="house-spec" data-value="Bath" data-multi-select="true">Bath</button>
+                    <button class="home-hero__filter-button" data-filter-group="house-spec" data-value="Carpark" data-multi-select="true">Carpark</button>
+                    <button class="home-hero__filter-button" data-filter-group="house-spec" data-value="Accessible" data-multi-select="true">Accessible</button>
+                    <button class="home-hero__filter-button" data-filter-group="house-spec" data-value="Heating/Cooling" data-multi-select="true">Heating/Cooling</button>
+                    <button class="home-hero__filter-button" data-filter-group="house-spec" data-value="Attractions" data-multi-select="true">Attractions</button>
+                    <button class="home-hero__filter-button" data-filter-group="house-spec" data-value="Furnished" data-multi-select="true">Furnished</button>
+                    <button class="home-hero__filter-button" data-filter-group="house-spec" data-value="Unfurnished" data-multi-select="true">Unfurnished</button>
+                    <button class="home-hero__filter-button" data-filter-group="house-spec" data-value="Long Term" data-multi-select="true">Long Term</button>
+                    <button class="home-hero__filter-button" data-filter-group="house-spec" data-value="Short Term" data-multi-select="true">Short Term</button>
+                    <button class="home-hero__filter-button" data-filter-group="house-spec" data-value="Shower">Shower</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button class="home-hero__view-properties-button">View properties (5)</button>
+          </div>
+
+          <!-- Housemate Filter Dropdown Content -->
+          <div
+            class="home-hero__property-filter-dropdown"
+            id="housemateFilterDropdown"
+          >
+            <div class="home-hero__filter-section">
+              <div class="home-hero__filter-step">A</div>
+              <div class="home-hero__filter-main-content">
+                <span class="home-hero__filter-label">Gender</span>
+                <div class="home-hero__options-container">
+                  <div class="home-hero__options-grid">
+                    <button class="home-hero__filter-button" data-filter-group="housemate-gender" data-value="Male">Male</button>
+                    <button class="home-hero__filter-button" data-filter-group="housemate-gender" data-value="Female">Female</button>
+                    <button class="home-hero__filter-button" data-filter-group="housemate-gender" data-value="Other">Other</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="home-hero__filter-section">
+              <div class="home-hero__filter-step">B</div>
+              <div class="home-hero__filter-main-content">
+                <span class="home-hero__filter-label">Living Style</span>
+                <div class="home-hero__options-container">
+                  <div class="home-hero__options-grid">
+                    <button class="home-hero__filter-button" data-filter-group="housemate-living-style" data-value="Quiet">Quiet</button>
+                    <button class="home-hero__filter-button" data-filter-group="housemate-living-style" data-value="Social">Social</button>
+                    <button class="home-hero__filter-button" data-filter-group="housemate-living-style" data-value="Active">Active</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="home-hero__filter-section">
+              <div class="home-hero__filter-step">C</div>
+              <div class="home-hero__filter-main-content">
+                <span class="home-hero__filter-label">Habits</span>
+                <div class="home-hero__options-container">
+                  <div class="home-hero__options-grid">
+                    <button class="home-hero__filter-button" data-filter-group="housemate-habits" data-value="Smoker">Smoker</button>
+                    <button class="home-hero__filter-button" data-filter-group="housemate-habits" data-value="Non-Smoker">Non-Smoker</button>
+                    <button class="home-hero__filter-button" data-filter-group="housemate-habits" data-value="Pet Friendly">Pet Friendly</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="home-hero__filter-section">
+              <div class="home-hero__filter-step">D</div>
+              <div class="home-hero__filter-main-content">
+                <span class="home-hero__filter-label">Interests</span>
+                <div class="home-hero__options-container">
+                  <div class="home-hero__options-grid">
+                    <button class="home-hero__filter-button" data-filter-group="housemate-interests" data-value="Cooking" data-multi-select="true">Cooking</button>
+                    <button class="home-hero__filter-button" data-filter-group="housemate-interests" data-value="Sports" data-multi-select="true">Sports</button>
+                    <button class="home-hero__filter-button" data-filter-group="housemate-interests" data-value="Reading" data-multi-select="true">Reading</button>
+                    <button class="home-hero__filter-button" data-filter-group="housemate-interests" data-value="Gaming" data-multi-select="true">Gaming</button>
+                    <button class="home-hero__filter-button" data-filter-group="housemate-interests" data-value="Arts" data-multi-select="true">Arts</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button class="home-hero__view-properties-button">Find Housemates (5)</button>
+          </div>
+
+          <!-- Services Filter Dropdown Content -->
+          <div
+            class="home-hero__property-filter-dropdown"
+            id="servicesFilterDropdown"
+          >
+             <div class="home-hero__filter-section">
+                <div class="home-hero__filter-step">A</div>
+                <div class="home-hero__filter-main-content">
+                  <span class="home-hero__filter-label">Service Type</span>
+                  <div class="home-hero__options-container">
+                      <div class="home-hero__options-grid">
+                          <button class="home-hero__filter-button" data-filter-group="service-type" data-value="Personal Care">Personal Care</button>
+                          <button class="home-hero__filter-button" data-filter-group="service-type" data-value="Community Access">Community Access</button>
+                          <button class="home-hero__filter-button" data-filter-group="service-type" data-value="Therapy">Therapy</button>
+                          <button class="home-hero__filter-button" data-filter-group="service-type" data-value="Transport">Transport</button>
+                          <button class="home-hero__filter-button" data-filter-group="service-type" data-value="Daily Living">Daily Living</button>
+                          <button class="home-hero__filter-button" data-filter-group="service-type" data-value="Nursing">Nursing</button>
+                          <button class="home-hero__filter-button" data-filter-group="service-type" data-value="Household Tasks">Household Tasks</button>
+                      </div>
+                  </div>
+                </div>
+            </div>
+            <div class="home-hero__filter-section">
+                <div class="home-hero__filter-step">B</div>
+                <div class="home-hero__filter-main-content">
+                  <span class="home-hero__filter-label">Support Level</span>
+                  <div class="home-hero__options-container">
+                      <div class="home-hero__options-grid">
+                          <button class="home-hero__filter-button" data-filter-group="service-support-level" data-value="Low">Low</button>
+                          <button class="home-hero__filter-button" data-filter-group="service-support-level" data-value="Medium">Medium</button>
+                          <button class="home-hero__filter-button" data-filter-group="service-support-level" data-value="High">High</button>
+                          <button class="home-hero__filter-button" data-filter-group="service-support-level" data-value="24/7">24/7</button>
+                      </div>
+                  </div>
+                </div>
+            </div>
+            <div class="home-hero__filter-section">
+                <div class="home-hero__filter-step">C</div>
+                <div class="home-hero__filter-main-content">
+                  <span class="home-hero__filter-label">Availability</span>
+                  <div class="home-hero__options-container">
+                      <div class="home-hero__options-grid">
+                          <button class="home-hero__filter-button" data-filter-group="service-availability" data-value="Weekdays" data-multi-select="true">Weekdays</button>
+                          <button class="home-hero__filter-button" data-filter-group="service-availability" data-value="Weekends" data-multi-select="true">Weekends</button>
+                          <button class="home-hero__filter-button" data-filter-group="service-availability" data-value="Evenings" data-multi-select="true">Evenings</button>
+                          <button class="home-hero__filter-button" data-filter-group="service-availability" data-value="Mornings" data-multi-select="true">Mornings</button>
+                      </div>
+                  </div>
+                </div>
+            </div>
+            <button class="home-hero__view-properties-button">Find Services (5)</button>
+          </div>
+
+          <!-- Specialist Filter Dropdown Content -->
+          <div
+            class="home-hero__property-filter-dropdown"
+            id="specialistFilterDropdown"
+          >
+            <div class="home-hero__filter-section">
+                <div class="home-hero__filter-step">A</div>
+                <div class="home-hero__filter-main-content">
+                  <span class="home-hero__filter-label">Specialty Area</span>
+                  <div class="home-hero__options-container">
+                      <div class="home-hero__options-grid">
+                          <button class="home-hero__filter-button" data-filter-group="specialist-area" data-value="Physiotherapist">Physiotherapist</button>
+                          <button class="home-hero__filter-button" data-filter-group="specialist-area" data-value="Occupational Therapist">Occupational Therapist</button>
+                          <button class="home-hero__filter-button" data-filter-group="specialist-area" data-value="Psychologist">Psychologist</button>
+                          <button class="home-hero__filter-button" data-filter-group="specialist-area" data-value="Support Coordinator">Support Coordinator</button>
+                          <button class="home-hero__filter-button" data-filter-group="specialist-area" data-value="Speech Pathologist">Speech Pathologist</button>
+                          <button class="home-hero__filter-button" data-filter-group="specialist-area" data-value="Dietitian">Dietitian</button>
+                          <button class="home-hero__filter-button" data-filter-group="specialist-area" data-value="Exercise Physiologist">Exercise Physiologist</button>
+                      </div>
+                  </div>
+                </div>
+            </div>
+            <div class="home-hero__filter-section">
+                <div class="home-hero__filter-step">B</div>
+                <div class="home-hero__filter-main-content">
+                  <span class="home-hero__filter-label">Approach/Method</span>
+                  <div class="home-hero__options-container">
+                      <div class="home-hero__options-grid">
+                          <button class="home-hero__filter-button" data-filter-group="specialist-approach" data-value="CBT" data-multi-select="true">CBT</button>
+                          <button class="home-hero__filter-button" data-filter-group="specialist-approach" data-value="ACT" data-multi-select="true">ACT</button>
+                          <button class="home-hero__filter-button" data-filter-group="specialist-approach" data-value="Holistic" data-multi-select="true">Holistic</button>
+                          <button class="home-hero__filter-button" data-filter-group="specialist-approach" data-value="Trauma-Informed" data-multi-select="true">Trauma-Informed</button>
+                      </div>
+                  </div>
+                </div>
+            </div>
+            <div class="home-hero__filter-section">
+                <div class="home-hero__filter-step">C</div>
+                <div class="home-hero__filter-main-content">
+                  <span class="home-hero__filter-label">Availability</span>
+                  <div class="home-hero__options-container">
+                      <div class="home-hero__options-grid">
+                          <button class="home-hero__filter-button" data-filter-group="specialist-availability" data-value="Online">Online</button>
+                          <button class="home-hero__filter-button" data-filter-group="specialist-availability" data-value="In-Person">In-Person</button>
+                          <button class="home-hero__filter-button" data-filter-group="specialist-availability" data-value="Mobile">Mobile</button>
+                      </div>
+                  </div>
+                </div>
+            </div>
+            <button class="home-hero__view-properties-button">Find Specialists (5)</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Placeholder for Ad Placement 1 - Content will be loaded here by JavaScript -->
+    <div id="ad-placeholder-1"></div>
+
+    <!-- Properties by Location Section (from homepage2.html) -->
+    <section class="home-menu-section">
+      <h2>Based on your location</h2>
+      <p>Some of our picked properties near your location.</p>
+
+      <div class="filter-search-bar">
+        <div class="button-group">
+          <div class="button-group-inner">
+            <button class="filter-button active">
+              <i class="bi bi-key filter-icon"></i> Find a Home
+            </button>
+            <button class="filter-button">
+              <i class="bi bi-house filter-icon"></i> List your property
+            </button>
+          </div>
+        </div>
+        <div class="search-input-container">
+          <i class="bi bi-search search-input-icon"></i>
+          <input type="text" class="search-input" placeholder="Search..." />
+        </div>
+      </div>
+
+      <div class="property-grid">
+        <div class="property-card">
+          <div class="property-card-image-container">
+            <img
+              src="./src/Nestoraa_Imagery/14.svg"
+              alt="Property 1"
+              class="property-card-image"
+            />
+            <div class="popular-tag">
+              <i class="bi bi-star-fill"></i> POPULAR
+            </div>
+          </div>
+          <div class="property-card-content">
+            <div class="property-card-type-and-heart">
+              <div class="property-card-type">House</div>
+              <div class="heart-icon-container">
+                <i class="bi bi-heart"></i>
+              </div>
+            </div>
+            <div class="property-card-living">Shared living</div>
+            <div class="property-card-address">
+              45 Hindmarsh Ave, Adelaide SA 5000
+            </div>
+            <div class="property-details">
+              <div class="detail-item"><i class="fas fa-bed"></i> 3 Beds</div>
+              <div class="detail-item">
+                <i class="fas fa-bath"></i> 2 Bathrooms
+              </div>
+              <div class="detail-item">
+                <i class="fas fa-ruler-combined"></i> 5x7 m²
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="property-card">
+          <div class="property-card-image-container">
+            <img
+              src="./src/Nestoraa_Imagery/14.svg"
+              alt="Property 2"
+              class="property-card-image"
+            />
+            <div class="popular-tag">
+              <i class="bi bi-star-fill"></i> POPULAR
+            </div>
+          </div>
+          <div class="property-card-content">
+            <div class="property-card-type-and-heart">
+              <div class="property-card-type">House</div>
+              <div class="heart-icon-container">
+                <i class="bi bi-heart"></i>
+              </div>
+            </div>
+            <div class="property-card-living">Independant living</div>
+            <div class="property-card-address">
+              12 Greenway Cres, Glenelg SA 5045
+            </div>
+            <div class="property-details">
+              <div class="detail-item"><i class="fas fa-bed"></i> 4 Beds</div>
+              <div class="detail-item">
+                <i class="fas fa-bath"></i> 2 Bathrooms
+              </div>
+              <div class="detail-item">
+                <i class="fas fa-ruler-combined"></i> 6x7.5 m²
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="property-card">
+          <div class="property-card-image-container">
+            <img
+              src="./src/Nestoraa_Imagery/14.svg"
+              alt="Property 3"
+              class="property-card-image"
+            />
+            <div class="popular-tag">
+              <i class="bi bi-star-fill"></i> POPULAR
+            </div>
+          </div>
+          <div class="property-card-content">
+            <div class="property-card-type-and-heart">
+              <div class="property-card-type">Apartment</div>
+              <div class="heart-icon-container">
+                <i class="bi bi-heart"></i>
+              </div>
+            </div>
+            <div class="property-card-living">Shared living</div>
+            <div class="property-card-address">
+              78 Mawson St, Norwood SA 5067
+            </div>
+            <div class="property-details">
+              <div class="detail-item"><i class="fas fa-bed"></i> 4 Beds</div>
+              <div class="detail-item">
+                <i class="fas fa-bath"></i> 3 Bathrooms
+              </div>
+              <div class="detail-item">
+                <i class="fas fa-ruler-combined"></i> 8x10 m²
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="property-card">
+          <div class="property-card-image-container">
+            <img
+              src="./src/Nestoraa_Imagery/14.svg"
+              alt="Property 4"
+              class="property-card-image"
+            />
+          </div>
+          <div class="property-card-content">
+            <div class="property-card-type-and-heart">
+              <div class="property-card-type">Unit</div>
+              <div class="heart-icon-container">
+                <i class="bi bi-heart"></i>
+              </div>
+            </div>
+            <div class="property-card-living">Independant living</div>
+            <div class="property-card-address">
+              33 Brighton Rd, Brighton SA 5048
+            </div>
+            <div class="property-details">
+              <div class="detail-item"><i class="fas fa-bed"></i> 4 Beds</div>
+              <div class="detail-item">
+                <i class="fas fa-bath"></i> 2 Bathrooms
+              </div>
+              <div class="detail-item">
+                <i class="fas fa-ruler-combined"></i> 6x8 m²
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="property-card">
+          <div class="property-card-image-container">
+            <img
+              src="./src/Nestoraa_Imagery/14.svg"
+              alt="Property 5"
+              class="property-card-image"
+            />
+          </div>
+          <div class="property-card-content">
+            <div class="property-card-type-and-heart">
+              <div class="property-card-type">House</div>
+              <div class="heart-icon-container">
+                <i class="bi bi-heart"></i>
+              </div>
+            </div>
+            <div class="property-card-living">Shared living</div>
+            <div class="property-card-address">
+              59 Pirie St, Adelaide SA 5000
+            </div>
+            <div class="property-details">
+              <div class="detail-item"><i class="fas fa-bed"></i> 2 Beds</div>
+              <div class="detail-item">
+                <i class="fas fa-bath"></i> 1 Bathrooms
+              </div>
+              <div class="detail-item">
+                <i class="fas fa-ruler-combined"></i> 5x7.5 m²
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="property-card">
+          <div class="property-card-image-container">
+            <img
+              src="./src/Nestoraa_Imagery/14.svg"
+              alt="Property 6"
+              class="property-card-image"
+            />
+          </div>
+          <div class="property-card-content">
+            <div class="property-card-type-and-heart">
+              <div class="property-card-type">Unit</div>
+              <div class="heart-icon-container">
+                <i class="bi bi-heart"></i>
+              </div>
+            </div>
+            <div class="property-card-living">Shared living</div>
+            <div class="property-card-address">
+              101 Sea Rd, Semaphore SA 5019
+            </div>
+            <div class="property-details">
+              <div class="detail-item"><i class="fas fa-bed"></i> 3 Beds</div>
+              <div class="detail-item">
+                <i class="fas fa-bath"></i> 1 Bathrooms
+              </div>
+              <div class="detail-item">
+                <i class="fas fa-ruler-combined"></i> 5x7 m²
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button class="browse-more-btn">Browse more properties</button>
+    </section>
+
+    <!-- Home Contact Section -->
+    <section class="home-contact-section">
+      <div class="home-contact-header">
+        <div class="home-contact-heading-content">
+          <h2 class="home-contact-heading">
+            Where the right home meets the right support.
+          </h2>
+        </div>
+        <p class="home-contact-description">
+          Our goal is to take the stress out of finding accessible living. The
+          best part? You’re not doing it alone — you’re backed by a team that
+          understands the system and puts your needs first.
+        </p>
+      </div>
+
+      <div class="info-cards-container">
+        <div class="info-card card-1">
+          <img
+            src="./src/Nestoraa_Icons/44.svg"
+            alt="Who we are icon"
+            class="info-card-icon"
+          />
+          <div class="info-content-wrapper">
+            <h3 class="info-card-title">Who we are</h3>
+            <p class="info-card-text">
+              Nestoraa is where the right home meets the right support —
+              bringing tailored living, trusted care, and a connected community
+              all in one place.
+            </p>
+          </div>
+        </div>
+
+        <div class="info-card card-2">
+          <img
+            src="./src/Nestoraa_Icons/45.svg"
+            alt="What we offer icon"
+            class="info-card-icon"
+          />
+          <div class="info-content-wrapper">
+            <h3 class="info-card-title">What we offer</h3>
+            <p class="info-card-text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+              euismod, nisl vel tincidunt facilisis, lorem nunc cursus nulla,
+              vitae.
+            </p>
+          </div>
+        </div>
+
+        <div class="info-card card-3">
+          <img
+            src="./src/Nestoraa_Icons/34.svg"
+            alt="How we help icon"
+            class="info-card-icon"
+          />
+          <div class="info-content-wrapper">
+            <h3 class="info-card-title">How we help</h3>
+            <p class="info-card-text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+              euismod, nisl vel tincidunt facilisis, lorem nunc cursus nulla,
+              vitae.
+            </p>
+          </div>
+        </div>
+
+        <div class="info-card card-1">
+          <img
+            src="./src/Nestoraa_Icons/44.svg"
+            alt="Who we are icon"
+            class="info-card-icon"
+          />
+          <div class="info-content-wrapper">
+            <h3 class="info-card-title">Our Vision</h3>
+            <p class="info-card-text">
+              Our vision is to empower individuals with accessible housing
+              solutions and comprehensive support systems for independent
+              living.
+            </p>
+          </div>
+        </div>
+
+        <div class="info-card card-2">
+          <img
+            src="./src/Nestoraa_Icons/45.svg"
+            alt="What we offer icon"
+            class="info-card-icon"
+          />
+          <div class="info-content-wrapper">
+            <h3 class="info-card-title">Our Services</h3>
+            <p class="info-card-text">
+              We offer a range of services including housing placement, care
+              coordination, and community integration programs.
+            </p>
+          </div>
+        </div>
+
+        <div class="info-card card-3">
+          <img
+            src="./src/Nestoraa_Icons/34.svg"
+            alt="How we help icon"
+            class="info-card-icon"
+          />
+          <div class="info-content-wrapper">
+            <h3 class="info-card-title">Support Network</h3>
+            <p class="info-card-text">
+              We connect you with a vast network of service providers and
+              community groups to ensure you have all the support you need.
+            </p>
+          </div>
+        </div>
+
+        <div class="info-card card-1">
+          <img
+            src="./src/Nestoraa_Icons/44.svg"
+            alt="Who we are icon"
+            class="info-card-icon"
+          />
+          <div class="info-content-wrapper">
+            <h3 class="info-card-title">Community Focus</h3>
+            <p class="info-card-text">
+              Building a strong, inclusive community is at the heart of what we
+              do, fostering connection and belonging for everyone.
+            </p>
+          </div>
+        </div>
+
+        <div class="info-card card-2">
+          <img
+            src="./src/Nestoraa_Icons/45.svg"
+            alt="What we offer icon"
+            class="info-card-icon"
+          />
+          <div class="info-content-wrapper">
+            <h3 class="info-card-title">Easy Process</h3>
+            <p class="info-card-text">
+              Our streamlined process makes finding your ideal accessible home
+              and support simple and stress-free.
+            </p>
+          </div>
+        </div>
+
+        <div class="info-card card-3">
+          <img
+            src="./src/Nestoraa_Icons/34.svg"
+            alt="How we help icon"
+            class="info-card-icon"
+          />
+          <div class="info-content-wrapper">
+            <h3 class="info-card-title">Get Started</h3>
+            <p class="info-card-text">
+              Ready to find your perfect home and support? Contact us today to
+              begin your journey with Nestoraa.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="home-contact-stats-section">
+        <div class="stat-item">
+          <div class="stat-number">Over 25%</div>
+          <div class="stat-description">
+            of people with disability have unmet housing needs or live in
+            unsuitable homes
+          </div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">1 in 6</div>
+          <div class="stat-description">
+            Australians live with a disability.
+          </div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">Over 450,000</div>
+          <div class="stat-description">
+            people are NDIS participants, with many seeking more suitable
+            housing.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Placeholder for Ad Placement 2 - Content will be loaded here by JavaScript -->
+    <div id="ad-placeholder-2"></div>
+
+    <!-- Home Newsletter Section -->
+    <section class="home-newsletter-section">
+      <div class="newsletter-section-divider"></div>
+      <div class="home-newsletter-content-wrapper">
+        <h2 class="home-newsletter-heading">
+          Have any questions about Nestoraa?
+        </h2>
+        <p class="home-newsletter-subheading">Talk to us!</p>
+        <p class="home-newsletter-description">
+          Need support or have a property to list? Get in touch — we’re here to
+          help you find or share the right home.
+        </p>
+        <div class="newsletter-form-container">
+          <form class="newsletter-form">
+            <input
+              type="email"
+              placeholder="Enter your email address"
+              class="newsletter-input"
+              required
+            />
+            <button type="submit" class="newsletter-button">Submit</button>
+          </form>
+        </div>
+        <p class="home-newsletter-network-text">
+          Be part of a growing network of 10,000+ peoples who support inclusive
+          living with Nestoraa.
+        </p>
+      </div>
+      <div class="newsletter-section-divider"></div>
+    </section>
+
+    <!-- Placeholder for Footer - Content will be loaded here by JavaScript -->
+    <div id="footer-placeholder"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- REWRITTEN JavaScript for the expandable filter menu -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const menuBar = document.getElementById("heroMenuBar");
+        const interactiveSelects = document.querySelectorAll(".home-hero__interactive-select");
+        const filterDropdowns = document.querySelectorAll(".home-hero__property-filter-dropdown");
+
+        // Click handler for all interactive select triggers
+        interactiveSelects.forEach((select) => {
+          select.addEventListener("click", function (event) {
+            event.stopPropagation();
+            const targetDropdownId = this.dataset.targetDropdown;
+            const targetDropdown = document.getElementById(targetDropdownId);
+
+            // Check if the clicked dropdown is already active
+            const isAlreadyActive = targetDropdown.classList.contains("active");
+
+            // First, close all dropdowns and remove expanded state
+            menuBar.classList.remove("expanded");
+            filterDropdowns.forEach((dropdown) => {
+              dropdown.classList.remove("active");
+            });
+             interactiveSelects.forEach(s => s.classList.remove('active'));
+
+
+            // If it wasn't active, open it
+            if (!isAlreadyActive) {
+              menuBar.classList.add("expanded");
+              targetDropdown.classList.add("active");
+              this.classList.add('active');
+            }
+          });
+        });
+
+        // Handle clicks on filter buttons inside any dropdown
+        const allFilterButtons = document.querySelectorAll('.home-hero__filter-button');
+        allFilterButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const filterGroup = this.dataset.filterGroup;
+                const isMultiSelect = this.dataset.multiSelect === 'true';
+                const parentDropdown = this.closest('.home-hero__property-filter-dropdown');
+
+                if (isMultiSelect) {
+                    this.classList.toggle('active');
+                } else {
+                    // Deselect other buttons in the same group within the same dropdown
+                    parentDropdown.querySelectorAll(`.home-hero__filter-button[data-filter-group="${filterGroup}"]`).forEach(btn => {
+                        btn.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                }
+                
+                updateViewPropertiesCount();
+            });
+        });
+
+
+        // Global click listener to close the menu if clicking outside
+        document.addEventListener("click", function (event) {
+          if (!menuBar.contains(event.target)) {
+            menuBar.classList.remove("expanded");
+            filterDropdowns.forEach((dropdown) => {
+              dropdown.classList.remove("active");
+            });
+            interactiveSelects.forEach(s => s.classList.remove('active'));
+          }
+        });
+        
+        // Close dropdown when "View properties" button is clicked
+        document.querySelectorAll(".home-hero__view-properties-button").forEach((btn) => {
+            btn.addEventListener("click", function () {
+                menuBar.classList.remove("expanded");
+                filterDropdowns.forEach((dropdown) => {
+                    dropdown.classList.remove("active");
+                });
+                interactiveSelects.forEach(s => s.classList.remove('active'));
+            });
+        });
+
+
+        // Function to update the (X) in "View properties (X)"
+        function updateViewPropertiesCount() {
+          const dummyCount = Math.floor(Math.random() * 100) + 1;
+          // Update all view properties buttons
+          document.querySelectorAll(".home-hero__view-properties-button").forEach((btn) => {
+              if (btn.textContent.includes("View properties")) {
+                btn.textContent = `View properties (${dummyCount})`;
+              } else if (btn.textContent.includes("Find Housemates")) {
+                btn.textContent = `Find Housemates (${dummyCount})`;
+              } else if (btn.textContent.includes("Find Services")) {
+                btn.textContent = `Find Services (${dummyCount})`;
+              } else if (btn.textContent.includes("Find Specialists")) {
+                btn.textContent = `Find Specialists (${dummyCount})`;
+              }
+            });
+        }
+        updateViewPropertiesCount(); // Initial call
+      });
+    </script>
+    
+    <script>
+      // JavaScript for the "Based on your location" section buttons and search
+      document.addEventListener("DOMContentLoaded", function () {
+        const filterButtons = document.querySelectorAll(
+          ".home-menu-section .filter-button"
+        );
+
+        filterButtons.forEach((button) => {
+          button.addEventListener("click", function () {
+            // Remove 'active' class from all buttons
+            filterButtons.forEach((btn) => btn.classList.remove("active"));
+            // Add 'active' class to the clicked button
+            this.classList.add("active");
+          });
+        });
+
+        // Basic search functionality (optional, can be expanded)
+        const searchInput = document.querySelector(
+          ".home-menu-section .search-input"
+        );
+        searchInput.addEventListener("keypress", function (event) {
+          if (event.key === "Enter") {
+            console.log("Searching for:", searchInput.value);
+            // Replaced alert with console log
+            console.log("Search functionality can be implemented here!");
+          }
+        });
+      });
+    </script>
+
+    <script>
+      // Function to fetch and insert HTML content from separate files
+      async function loadHTML(url, elementId) {
+        try {
+          const response = await fetch(url);
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+          }
+          const html = await response.text();
+          const parser = new DOMParser();
+          const doc = parser.parseFromString(html, "text/html");
+
+          // Extract content from the body of the fetched document
+          const contentToInsert = doc.body.innerHTML;
+          document.getElementById(elementId).innerHTML = contentToInsert;
+
+          // Re-initialize Bootstrap components if needed (e.g., navbar toggler)
+          if (elementId === "header-placeholder") {
+            const navbarToggler = document.querySelector(
+              "#header-placeholder .navbar-toggler"
+            );
+            if (navbarToggler) {
+              new bootstrap.Collapse(document.getElementById("navbarNav"), {
+                toggle: false,
+              });
+            }
+          }
+        } catch (error) {
+          console.error(`Could not load ${url}:`, error);
+          document.getElementById(
+            elementId
+          ).innerHTML = `<p style="color: red;">Failed to load ${url}</p>`;
+        }
+      }
+
+      // Load header, ad placement, and footer on DOMContentLoaded
+      document.addEventListener("DOMContentLoaded", function () {
+        loadHTML("./header.html", "header-placeholder");
+        loadHTML("./adPlacement.html", "ad-placeholder-1"); // Load first ad placement dynamically
+        loadHTML("./adPlacement.html", "ad-placeholder-2"); // Load second ad placement dynamically
+        loadHTML("./footer.html", "footer-placeholder");
+      });
+    </script>
+  </body>
+</html>

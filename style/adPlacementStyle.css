@@ -1,0 +1,29 @@
+/* Site Ad component */
+.site-ad__container {
+  background-color: var(--teal); /* Corrected to specified teal color */
+  border-radius: 20px; /* Rounded corners */
+  padding: 50px 30px; /* Ample padding */
+  margin: 50px auto;
+  margin-bottom: 100px; /* Centering and margin for the ad container itself */
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  width: 90%; /* Responsive width */
+  max-width: 800px; /* Max width for larger screens */
+  color: var(--white); /* White text color */
+  font-size: 2.5rem; /* Large font size for "AD PLACEMENT" */
+  font-weight: 600; /* Semi-bold */
+  display: flex; /* Use flexbox for content *inside* the ad container */
+  justify-content: center;
+  align-items: center;
+  min-height: 200px; /* Minimum height for the container */
+}
+
+/* Basic responsiveness for smaller text on very small screens */
+@media (max-width: 575.98px) {
+  .site-ad__container {
+    font-size: 1.8rem; /* Smaller font size for mobile */
+    padding: 40px 20px;
+    min-height: 150px;
+    margin: 30px auto;
+  }
+}

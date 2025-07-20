@@ -1,0 +1,110 @@
+/* Navbar specific styles */
+.ns-header {
+  margin-top: 15px;
+  background-color: var(--white);
+  position: relative;
+  z-index: 10;
+}
+
+.ns-header__logo {
+  height: 35px;
+  width: auto;
+}
+
+/* Navbar links transitions - Targeting Bootstrap's .nav-link but within our component */
+.navbar-nav .nav-link {
+  color: #333;
+  font-size: 16px;
+  margin-right: 7px;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  transition: color 0.3s ease; /* Smooth transition for color */
+}
+
+.navbar-nav .nav-link:hover {
+  color: var(--universal-tan); /* Highlight color on hover */
+}
+
+.navbar-nav .nav-link.active {
+  font-weight: bold;
+}
+
+/* Language icon transitions */
+.ns-header__language-icon {
+  font-size: 20px;
+  color: #333;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.2s ease; /* Smooth transition for color and transform */
+}
+
+.ns-header__language-icon:hover {
+  color: var(--universal-tan); /* Highlight color on hover */
+  transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+/* Account option transitions */
+.ns-header__account-option {
+  display: flex;
+  align-items: center;
+  background-color: #f0f0f0;
+  border: 1px solid #e0e0e0;
+  border-radius: 20px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease,
+    box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.ns-header__account-option:hover {
+  background-color: #e5e5e5; /* Slightly darker background on hover */
+  border-color: #d0d0d0; /* Darker border */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow on hover */
+  transform: translateY(-2px); /* Lift slightly on hover */
+}
+
+.ns-header__hamburger-icon,
+.ns-header__profile-icon {
+  font-size: 18px;
+  color: #333;
+  margin: 0 8px;
+}
+
+/* Responsive Adjustments for Navbar */
+@media (max-width: 991.98px) {
+  .navbar-nav {
+    width: 100%;
+    align-items: center; /* Center nav links when collapsed */
+    margin-top: 15px; /* Add some space above nav links in collapsed menu */
+  }
+  .nav-item {
+    width: 100%; /* Make nav items full width in collapsed menu */
+    text-align: center; /* Center text within nav items */
+  }
+  
+  /* Style the container for the action buttons inside the mobile menu */
+  .ns-header__actions-mobile {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+  }
+  
+  .ns-header__actions-mobile .ns-header__account-option {
+    width: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .navbar-collapse {
+    text-align: center; /* Center align items in collapsed menu */
+  }
+  .navbar-nav {
+    flex-direction: column; /* Stack nav items vertically */
+  }
+  .nav-item {
+    width: 100%; /* Full width for stacked nav items */
+  }
+}
